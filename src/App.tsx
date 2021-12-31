@@ -10,16 +10,16 @@ import defaultTheme from './styles/themes/default'
 
 const App = () => {
   return (
-    <ThemeProvider theme={defaultTheme}>
-      <BrowserRouter>
+    <BrowserRouter>
+      <ThemeProvider theme={defaultTheme}>
         <GlobalStyle />
 
         <S.Container>
           <Header />
           <Routes />
         </S.Container>
-      </BrowserRouter>
-    </ThemeProvider>
+      </ThemeProvider>
+    </BrowserRouter>
   )
 }
 
