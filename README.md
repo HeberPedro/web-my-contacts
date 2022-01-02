@@ -1,7 +1,6 @@
 <h1 align="center">
-    <img alt="React Boilerplate" src="./github/MyContacts.png" width="150"/>
+    <img alt="MyContacts" src="./github/MyContacts.svg" width="150"/>
     <br>
-    My Contacts
 </h1>
 
 <p align="center">
@@ -40,9 +39,7 @@
 - [TypeScript](https://www.typescriptlang.org/)
 - [react-router-dom](https://reactrouter.com/web/guides/quick-start)
 - [axios](https://github.com/axios/axios)
-- [date-fns](https://date-fns.org/)
 - [yup](https://github.com/jquense/yup)
-- [polished](https://polished.js.org)
 - [styled-components](https://www.styled-components.com/)
 - [jest](https://jestjs.io/pt-BR/)
 - [testing-library](https://testing-library.com/)
