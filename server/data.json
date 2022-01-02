@@ -1,0 +1,25 @@
+{
+  "contacts": [
+    {
+      "id": 1,
+      "name": "Heber Victor Pedro",
+      "email": "heberv.pedro@gmail.com",
+      "phone": "(19) 97103-8731",
+      "category": "instagram"
+    },
+    {
+      "id": 2,
+      "name": "João Victor",
+      "email": "joão.victor@gmail.com",
+      "phone": "(19) 92093-2567",
+      "category": "discord"
+    },
+    {
+      "id": 3,
+      "name": "Rafael Rotiroti",
+      "email": "rafael.rotiroti@gmail.com",
+      "phone": "(19) 92134-9867",
+      "category": "instagram"
+    }
+  ]
+}
