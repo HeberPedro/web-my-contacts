@@ -1,10 +1,32 @@
+import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
+
 import arrow from '@/assets/images/icons/arrow.svg'
 import edit from '@/assets/images/icons/edit.svg'
 import trash from '@/assets/images/icons/trash.svg'
+import api from '@/services/api'
 
 import * as S from './styles'
 
+interface Contact {
+  id: number
+  name: string
+  email?: string
+  phone?: string
+  category?: string
+}
+
 const ContactsList = () => {
+  const [contacts, setContacts] = useState<Contact[]>([])
+
+  useEffect(() => {
+    ;(async () => {
+      const { data } = await api.get<Contact[]>('/contacts')
+
+      setContacts(data)
+    })()
+  }, [])
+
   return (
     <S.Container>
       <S.InputSearchContainer>
@@ -12,8 +34,8 @@ const ContactsList = () => {
       </S.InputSearchContainer>
 
       <S.Header>
-        <strong>3 Contatos</strong>
-        <a href="/new">Novo Contato</a>
+        <strong>{contacts.length} Contatos</strong>
+        <Link to="/new">Novo Contato</Link>
       </S.Header>
 
       <S.ListContainer>
@@ -24,63 +46,27 @@ const ContactsList = () => {
           </button>
         </header>
 
-        <S.Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>Heber Victor Pedro</strong>
-              <small>Instagram</small>
+        {contacts.map((contact) => (
+          <S.Card key={contact.id}>
+            <div className="info">
+              <div className="contact-name">
+                <strong>{contact.name}</strong>
+                {contact.category && <small>{contact.category}</small>}
+              </div>
+              <span>{contact.email}</span>
+              <span>{contact.phone}</span>
             </div>
-            <span>heberv.pedro@gmail.com</span>
-            <span>(19) 97103-8731</span>
-          </div>
 
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="Edit" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="Delete" />
-            </button>
-          </div>
-        </S.Card>
-        <S.Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>João Victor</strong>
-              <small>Instagram</small>
+            <div className="actions">
+              <Link to={`/edit/${contact.id}`}>
+                <img src={edit} alt="Edit" />
+              </Link>
+              <button type="button">
+                <img src={trash} alt="Delete" />
+              </button>
             </div>
-            <span>joão.victor@gmail.com</span>
-            <span>(19) 92093-2567</span>
-          </div>
-
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="Edit" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="Delete" />
-            </button>
-          </div>
-        </S.Card>
-        <S.Card>
-          <div className="info">
-            <div className="contact-name">
-              <strong>Rafael Rotiroti</strong>
-              <small>Instagram</small>
-            </div>
-            <span>rafael.rotiroti@gmail.com</span>
-            <span>(19) 92134-9867</span>
-          </div>
-
-          <div className="actions">
-            <a href="/">
-              <img src={edit} alt="Edit" />
-            </a>
-            <button type="button">
-              <img src={trash} alt="Delete" />
-            </button>
-          </div>
-        </S.Card>
+          </S.Card>
+        ))}
       </S.ListContainer>
     </S.Container>
   )
