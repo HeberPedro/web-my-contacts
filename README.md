@@ -56,11 +56,14 @@ $ git clone https://github.com/heberpedro/web-my-contacts
 # Go into the repository
 $ cd web-my-contacts
 
-# Install dependencies
+# Install dependencies for the frontend and start application
 $ yarn install
-
-# Start application
 $ yarn start
+
+# Install dependencies for the fake backend and run application
+$ cd server
+$ yarn install
+$ yarn dev
 ```
 
 ## :memo: License
