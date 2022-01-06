@@ -1,5 +1,9 @@
 import styled from 'styled-components'
 
+interface ListHeaderProps {
+  orderBy: string
+}
+
 export const Container = styled.div`
   margin-top: 32px;
 `
@@ -49,7 +53,7 @@ export const Header = styled.header`
   }
 `
 
-export const ListContainer = styled.div`
+export const ListHeader = styled.div<ListHeaderProps>`
   margin-top: 32px;
 
   header {
@@ -66,6 +70,12 @@ export const ListContainer = styled.div`
       margin-right: 8px;
       font-weight: bold;
       color: ${({ theme }) => theme.colors.primary.main};
+    }
+
+    img {
+      transform: ${({ orderBy }) =>
+        orderBy === 'asc' ? 'rotate(180deg)' : 'rotate(0deg)'};
+      transition: transform 0.2s ease-in;
     }
   }
 `
