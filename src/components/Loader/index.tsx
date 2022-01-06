@@ -4,7 +4,11 @@ import * as S from './styles'
 
 const loaderRoot = document.getElementById('loader-root') as HTMLElement
 
-const Loader = () => {
+const Loader = ({ isLoading = false }) => {
+  if (!isLoading) {
+    return null
+  }
+
   return ReactDOM.createPortal(
     <S.Overlay>
       <div className="loader" />

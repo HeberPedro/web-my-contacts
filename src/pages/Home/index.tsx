@@ -6,6 +6,8 @@ import edit from '@/assets/images/icons/edit.svg'
 import trash from '@/assets/images/icons/trash.svg'
 import api from '@/services/api'
 
+import Loader from '@/components/Loader'
+
 import * as S from './styles'
 
 interface Contact {
@@ -52,6 +54,8 @@ const ContactsList = () => {
 
   return (
     <S.Container>
+      <Loader isLoading={isLoading} />
+
       <S.InputSearchContainer>
         <input
           value={searchTerm}
