@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import arrow from '@/assets/images/icons/arrow.svg'
 import edit from '@/assets/images/icons/edit.svg'
 import trash from '@/assets/images/icons/trash.svg'
+import magnifierQuestion from '@/assets/images/magnifier-question.svg'
 import sad from '@/assets/images/sad.svg'
 import { Contact } from '@/common/types/api'
 import { fetchContacts } from '@/services/api/contacts'
@@ -96,6 +97,17 @@ const ContactsList = () => {
                 </button>
               </header>
             </S.ListHeader>
+          )}
+
+          {contacts.length <= 0 && searchTerm && (
+            <S.SearchNotFoundContainer>
+              <img src={magnifierQuestion} alt="Magnifier question" />
+
+              <span>
+                Nenhum resultado foi encontrado para{' '}
+                <strong>{searchTerm}</strong>
+              </span>
+            </S.SearchNotFoundContainer>
           )}
 
           {contacts.map((contact) => (
