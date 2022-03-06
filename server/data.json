@@ -1,25 +1,47 @@
 {
   "contacts": [
     {
-      "id": 1,
+      "id": "b40e28d3-3e0f-4b8e-b23e-0ac34c72628e",
       "name": "Heber Victor Pedro",
       "email": "heberv.pedro@gmail.com",
       "phone": "(19) 97103-8731",
       "category": "instagram"
     },
     {
-      "id": 2,
+      "id": "e33814e2-df14-43e6-96f1-f4ee4138aa75",
       "name": "João Victor",
       "email": "joão.victor@gmail.com",
       "phone": "(19) 92093-2567",
       "category": "discord"
     },
     {
-      "id": 3,
+      "id": "01630332-e89c-4c5b-8d45-150cc2dd5675",
       "name": "Rafael Rotiroti",
       "email": "rafael.rotiroti@gmail.com",
       "phone": "(19) 92134-9867",
       "category": "instagram"
+    }
+  ],
+  "categories": [
+    {
+      "id": "4243c5ca-7bc6-47d4-b7d9-5b74b9d0555d",
+      "name": "Discord"
+    },
+    {
+      "id": "38fdcea5-d436-4bb9-9798-460f56bd1121",
+      "name": "Faculdade"
+    },
+    {
+      "id": "ae8980cc-30fd-48c0-be9b-9ae90fd31050",
+      "name": "Instagram"
+    },
+    {
+      "id": "76f97387-6b71-44b6-a0ba-e9b31a3e9b66",
+      "name": "LinkedIn"
+    },
+    {
+      "id": "34920327-413b-4162-a594-db5f7283b27a",
+      "name": "Twitter"
     }
   ]
 }
